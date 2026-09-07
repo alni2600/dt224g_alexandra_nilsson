@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial scale=1.0">
+        <title>Alexandras hemsida</title>
+    </head>
+    <body>
+        <!--SIDHUVUD-->
+        <header>
+            <a href="index.html">
+                <img src="images/logotyp.svg" alt="logotyp alexandra" width="150">
+            </a>
+            <p>Alexandras hemsida</p>
+            <nav>
+                <ul>
+                   <li><a href="index.html">Start</a></li>
+                    <li><a href="hobby.html">Hobby</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <!--KONTAKTUPPGIFTER-->
+            <h1>Kontakta mig.</h1>
+            <p>Hör av dig till mig genom att fylla i formuläret nedanför!</p>
+            <form>
+                <label for="name">Ditt namn:</label>
+                <input type="text" id="name" name="name" placeholder="t.ex. Emil Persson">
+                <br>
+                <label for="email">Din epost:</label>
+                <input type="email" id="email" name="email" required placeholder="t.ex. emil.persson@hotmail.com">
+                <br>
+                <label for="subject">Vad gäller ditt ärende?</label>
+                <select id="subject" name="subject">
+                    <option>Välj ärende</option>
+                    <option>Samarbetsförfrågan</option>
+                    <option>Allmän fråga</option>
+                </select>
+                <br>
+                <label for="message">Meddelande</label>
+                <br>
+                <textarea id="message" name="message" required></textarea>
+                <br> 
+                <button type="submit">Skicka</button>
+                <p>Det går även bra att mejla mig direkt på <a href="mailto:alni2600@student.miun.se">alni2600@student.miun.se</a></p>
+
+            </form>
+        </main>
+        <footer>
+             <p>&copy; 2026 Alexandra Nilsson</p>
+            <a href="kontakt.html">Kontakt</a>
+        </footer>
+    </body>
+</html>
