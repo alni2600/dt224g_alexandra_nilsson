@@ -6,7 +6,7 @@ På den här webbsidan kan man läsa kort om mig, min skidsatsning samt hitta mi
 * Jag ska kunna testa flera av de olika moment som ingår i kursen  
 
 #### Vilka tekniker har använts på hemsidan?
-Just nu har i princip bara html använts, men längre fram kommer vi implementera även CSS och JavaScript.
+Både HTML och CSS har använts.
 Readme-filen är skriven med markdown language.
 
 #### Länkar till de publicerade versionerna:

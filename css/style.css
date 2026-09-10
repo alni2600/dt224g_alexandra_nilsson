@@ -1,0 +1,51 @@
+body {
+    background-color: #dfc4df;
+    color: #000000;
+    font-family: 'Doppio One', Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 2;
+    margin: 20px;
+}
+
+header {
+    background-color: #380369;
+    color: rgb(12, 0, 0);
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-family: impact, sans-serif;
+    color: #380369;
+    font-size: 5rem;
+    line-height: 1;
+}
+h2 {
+    font-family: 'Doppio One', Arial, sans-serif;
+    color: #380369;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color:rgb(7, 0, 0);
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+}
+
+img {
+    border: 15px rgb(0, 0, 0) dotted;
+    padding: 10px;
+}
+img[alt="logotyp alexandra"] {
+    border: none;
+}
+
+footer {
+    background-color: #380369;
+    text-align: start;
+    padding: 10px;
+}
+
