@@ -4,6 +4,7 @@ body {
     font-family: 'Doppio One', Arial, sans-serif;
     font-size: 1.2rem;
     line-height: 2;
+    margin: 20px;
 }
 
 header {
@@ -11,10 +12,6 @@ header {
     color: rgb(12, 0, 0);
     padding: 1rem;
     text-align: center;
-}
-
-main {
-   
 }
 
 h1 {
@@ -39,7 +36,7 @@ p {
 }
 
 img {
-    border: 20px rgb(0, 0, 0) dotted;
+    border: 15px rgb(0, 0, 0) dotted;
     padding: 10px;
 }
 img[alt="logotyp alexandra"] {
