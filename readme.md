@@ -4,7 +4,7 @@
 * Jag ska kunna testa flera av de olika momenten som ingår i kursen  
 
 #### Vilka tekniker har använts på hemsidan?
-Just nu har i princip bara html använts, men längre fram kommer vi implementera även CSS och JavaScript.
+Både HTML och CSS har använts.
 Readme-filen är skriven med markdown language.
 
 #### Länkar till de publicerade versionerna:  
