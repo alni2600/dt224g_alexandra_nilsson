@@ -1,3 +1,8 @@
+/* Gör så att boxarna blir korrekt storlek när man sätter storleken själv (sätts överst för att den inte ska ärvas) */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #dfc4df;
     color: #000000;
@@ -41,6 +46,48 @@ img {
 }
 img[alt="logotyp alexandra"] {
     border: none;
+}
+
+form {
+    background-color: #f15795;
+    padding: 20px;
+    border-radius: 10px;
+    border: 5px solid #380369;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+table {
+    /* collapse gör att det blir enkla streck emellan istället för dubbla som är default*/
+    border-collapse: collapse;
+    /* gör att tabellen blir mer förutsägbar, t.ex att cellerna anpassar sig mer efter rubrikerna än innehållet */
+    table-layout: fixed;
+    border: 1px solid #380369;
+    width: 100%;
+}
+
+th, 
+td {
+    border: 1px solid #380369;
+    padding: 0.7em;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f15795;
+}
+
+tr:nth-child(odd) {
+    background-color: pink;
+}
+
+/* gör att form och annat som inte som default äver egenskaper gör det nu */
+button, 
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
 }
 
 footer {
