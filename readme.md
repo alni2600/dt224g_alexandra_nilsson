@@ -15,7 +15,7 @@ Netlify: [https://dt224g-alexandra-nilsson.netlify.app/](https://dt224g-alexandr
 
 #### Svar kortfattat på följande frågor om git:
 1. _Vad är skillnaden mellan git add och git commit?_  
-  Git add stagear och git commit commitar - stagear är som att samla på det som ska commitas i en korg och commita är tömma korgen mot Github eller liknande.
+  Git add stagear och git commit commitar - stagear är som att samla på det som ska commitas i en korg och commita är tömma korgen (skapa en ögonblicksbild).
 2. _Varför använder man branches istället för att jobba direkt i main?_  
   Det finns flera fördelar med att jobba i en branch istället för direkt i main. Bland annat:
    * Om den feature man jobbar med gör att hela projektet slutar fungera kan man enkelt gå tillbaka till hur det var innan.
