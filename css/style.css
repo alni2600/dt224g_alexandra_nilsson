@@ -79,6 +79,11 @@ form {
     margin: 0 auto;
 }
 
+/* blir en ljus rosa färg när man är i fältet, standardraden är kvar (outline: none; om den ska bort*/
+input:focus, textarea:focus, select:focus {
+      background-color: #f3bdd5;    
+}
+
 button {
     background-color: #380369;    
     color: white;              
@@ -91,7 +96,7 @@ button {
 }
 
 button:hover {
-    background-color: #0e011a;
+    background-color:#380369;
 }
 
 button:active {
@@ -110,6 +115,8 @@ table {
 .table-container {
     border: 10px solid #380369;
     border-radius: 6px;
+    overflow-x: auto;     /* Horisontell scroll vid behov */
+    -webkit-overflow-scrolling: touch; /* Smidig scroll på mobil */
 }
 
 th, 
