@@ -1,3 +1,8 @@
+/* Gör så att boxarna blir korrekt storlek när man sätter storleken själv (sätts överst för att den inte ska ärvas) */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #dfc4df;
     color: #000000;
@@ -14,11 +19,29 @@ header {
     text-align: center;
 }
 
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header ul {
+    /* tar bort prickarna på listan */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    /* gör att valen hamnar bredvid varandra istället */
+    display: flex;
+    /* skapar mellanrum mellan länkarna */
+    gap: 20px;
+    justify-content: center;
+}
+
 h1 {
     font-family: impact, sans-serif;
     color: #380369;
     font-size: 5rem;
     line-height: 1;
+    -webkit-text-stroke: 0.1px #0b0014;
 }
 h2 {
     font-family: 'Doppio One', Arial, sans-serif;
@@ -30,22 +53,108 @@ h2 {
 p {
     font-size: 1.2rem;
     line-height: 1.5;
-    color:rgb(7, 0, 0);
     margin-block-start: 20px;
     margin-block-end: 20px;
 }
 
 img {
-    border: 15px rgb(0, 0, 0) dotted;
+    border: 15px #380369 dotted;
     padding: 10px;
+    width: 100%;
+    height: auto;
+
 }
 img[alt="logotyp alexandra"] {
     border: none;
+    width: 50%;
+    max-width: 400px;
+}
+
+form {
+    background-color: #f15795;
+    padding: 20px;
+    border-radius: 10px;
+    border: 5px solid #380369;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* blir en ljus rosa färg när man är i fältet, standardraden är kvar (outline: none; om den ska bort*/
+input:focus, textarea:focus, select:focus {
+      background-color: #f3bdd5;    
+}
+
+button {
+    background-color: #380369;    
+    color: white;              
+    padding: 10px 24px;         
+    border: none;                 
+    border-radius: 4px;           
+    font-size: 1rem; 
+    /* Handmarkör vid hover */             
+    cursor: pointer;   
+}
+
+button:hover {
+    background-color:#380369;
+}
+
+button:active {
+        /* gör knappen blå när man trycker på den */
+    background-color: #004466;
+}
+
+table {
+    /* collapse gör att det blir enkla streck emellan istället för dubbla som är default*/
+    border-collapse: collapse;
+    /* gör att tabellen blir mer förutsägbar, t.ex att cellerna anpassar sig mer efter rubrikerna än innehållet */
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table-container {
+    border: 10px solid #380369;
+    border-radius: 6px;
+    overflow-x: auto;     /* Horisontell scroll vid behov */
+    -webkit-overflow-scrolling: touch; /* Smidig scroll på mobil */
+}
+
+th, 
+td {
+    border: 1px solid #380369;
+    padding: 0.7em;
+    text-align: left;
+}
+
+th {
+    background-color: #f15795;
+}
+
+tr:nth-child(even) {
+    background-color: #f15795;
+}
+
+tr:nth-child(odd) {
+    background-color: pink;
+}
+
+/* gör att form och annat som inte som default äver egenskaper gör det nu */
+button, 
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
 }
 
 footer {
     background-color: #380369;
-    text-align: start;
+    color: white;
+    text-align: center;
     padding: 10px;
+    line-height: 0;
 }
 
+footer a {
+    color: white;
+}

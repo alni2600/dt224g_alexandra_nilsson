@@ -3,11 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alexandras hemsida</title>
+        <title>Kontakt</title>
         <link href="css/style.css" rel="stylesheet">
+        
+        <!-- importera google font (sätt på alla sidor) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Doppio+One&display=swap" rel="stylesheet">
     </head>
+
     <body>
-        <!--SIDHUVUD-->
         <header>
             <a href="index.html">
                 <img src="images/logotyp.svg" alt="logotyp alexandra" width="200">
@@ -15,41 +20,52 @@
             <nav>
                 <ul>
                    <li><a href="index.html">Start</a></li>
-                    <li><a href="hobby.html">Hobby</a></li>
+                    <li><a href="hobby.html">Längdskidor</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
+
         <main>
             <!--KONTAKTUPPGIFTER-->
             <h1>Kontakta mig.</h1>
             <p>Hör av dig till mig genom att fylla i formuläret nedanför!</p>
-            <form>
-                <label for="name">Ditt namn:</label>
-                <input type="text" id="name" name="name" placeholder="t.ex. Emil Persson">
-                <br>
+            
+             <form class="form">
+                <div class="form-group">
+                    <!-- for kopplar samman labeln med input och gör att man kan trycka på labeln för att fokusera på input -->
+                    <label for="name">Ditt namn:</label>
+                    <!-- input skapar ett inmatningsfält, type talar om typen av input, id kopplar samman label och input, name är namnet på den datorvariabel som skickas till servern när formuläret skickas in. Utan name kommer servern inte kunna identifiera vad användaren har skrivit -->
+                    <input type="text" id="name" name="name" placeholder="t.ex. Emil Persson">
+                </div>
+               
                 <label for="email">Din epost:</label>
                 <input type="email" id="email" name="email" required placeholder="t.ex. emil.persson@hotmail.com">
                 <br>
+
                 <label for="subject">Vad gäller ditt ärende?</label>
                 <select id="subject" name="subject">
                     <option>Välj ärende</option>
                     <option>Samarbetsförfrågan</option>
                     <option>Allmän fråga</option>
                 </select>
+
                 <br>
                 <label for="message">Meddelande</label>
                 <br>
                 <textarea id="message" name="message" required></textarea>
                 <br> 
-                <button type="submit">Skicka</button>
-                <p>Det går även bra att mejla mig direkt på <a href="mailto:alni2600@student.miun.se">alni2600@student.miun.se</a></p>
 
+                <button type="submit">Skicka</button>
             </form>
+
+            <p>Det går även bra att mejla mig direkt på <a href="mailto:alni2600@student.miun.se">alni2600@student.miun.se</a></p>
+            
         </main>
+        
         <footer>
-             <p>&copy; 2026 Alexandra Nilsson</p>
-            <a href="kontakt.html">Kontakt</a>
+             <p>&copy; 2026 Alexandra Nilsson - <a href="kontakt.html">Kontakta mig.</a></p>
+            
         </footer>
     </body>
 </html>
