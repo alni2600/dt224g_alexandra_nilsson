@@ -31,15 +31,14 @@ header ul {
     padding: 0;
     /* gör att valen hamnar bredvid varandra istället */
     display: flex;
-    /* skapar mellanrum mellan länkarna */
-    gap: 20px;
-    justify-content: center;
+    /* placerar länkarna så att de är jämnt fördelade över hela vp-bredden (kan också använda gap: 10px; för att skapa mellanrum mellanblocken*/
+    justify-content: space-evenly;
 }
 
 h1 {
     font-family: impact, sans-serif;
     color: #380369;
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 1;
     -webkit-text-stroke: 0.1px #0b0014;
 }
@@ -58,11 +57,12 @@ p {
 }
 
 img {
+    position: relative;
     border: 15px #380369 dotted;
+    /* följande tre rader gör att bilden täcker 100% av vp-10px på alla sidor, samt att bildens höjd ändras proportioneligt med bredden */
     padding: 10px;
     width: 100%;
     height: auto;
-
 }
 img[alt="logotyp alexandra"] {
     border: none;
