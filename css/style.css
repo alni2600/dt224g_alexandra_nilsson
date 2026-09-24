@@ -3,20 +3,102 @@
     box-sizing: border-box;
 }
 
+/* ==================
+  STORA GRUPPERINGAR
+===================== */
+
+/* Generellt för hela sidan */
 body {
     background-color: #dfc4df;
     color: #000000;
     font-family: 'Doppio One', Arial, sans-serif;
     font-size: 1.2rem;
-    line-height: 2;
-    margin: 20px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0; 
 }
 
-header {
-    background-color: #380369;
+/* strukturerar huvudinnehållet. Skapar CSS-grid-layout */
+.page-layout {
+    display: grid;
+    height: 100%;
+
+    grid-template-areas:
+    "header"
+    "main"
+    "aside"
+    "footer";
+
+    /* grid-template-rows: 1fr 1fr 2fr 1fr 1fr; */
+}
+
+/* headern i liten skärm */
+.header {
+    grid-area: header;
+    display: flex;
+    flex-direction: column;
+    background-color: #a574a5;
     color: rgb(12, 0, 0);
     padding: 1rem;
     text-align: center;
+    align-items: center;
+}
+
+
+/* strukturerar huvudinnehållet. Skapar CSS-grid-layout */
+.main {
+    grid-area: main;
+    display: grid;
+    background-color: #dfc4df;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: #a574a5;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #a574a5;
+    color: white;
+    width: 100%;
+    display: grid;
+    /* skapar tre rader med två kolumner */
+    grid-template-areas: 
+    "logo logo"
+    "logotext logotext"
+    "footer-contact footer-nav";
+    padding: 2rem;
+}
+
+.box {
+    /* TA BORT NÄR INNEHÅLLET ÄR LITE MER PÅ PLATS */
+    border: 2px solid black;
+    min-height: 80px;
+}
+
+
+/* ==================
+  CLASSES / IDs
+===================== */
+
+.section {
+  text-align: center;
+  text-wrap: wrap;
+  border-bottom: 2px solid #9CA695;
+  padding-bottom: 20px;
+}
+
+/* Specificerar vilket element/block som ska till vilken grid-area i footern. Detta håller i sig även på @media, men då gör jag en annan layout. */
+.footer-logotyp { grid-area: logo; }
+.footer-logo { grid-area: logotext; }
+.footer-contact { grid-area: footer-contact; }
+.footer-nav { grid-area: footer-nav; }
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
 
 header a {
@@ -24,15 +106,63 @@ header a {
     text-decoration: none;
 }
 
+
+
+/* ===== CARDS ======= */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 1.2 rem;
+    color:black;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: black;
+}
+
+.card-body .button {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 0.4rem 0.8rem;
+    background-color: blueviolet;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+
 header ul {
     /* tar bort prickarna på listan */
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     /* gör att valen hamnar bredvid varandra istället */
     display: flex;
     /* placerar länkarna så att de är jämnt fördelade över hela vp-bredden (kan också använda gap: 10px; för att skapa mellanrum mellanblocken*/
     justify-content: space-evenly;
+    gap: 15px;
 }
 
 h1 {
@@ -57,12 +187,11 @@ p {
 }
 
 img {
-    position: relative;
-    border: 15px #380369 dotted;
+    border: none;
     /* följande tre rader gör att bilden täcker 100% av vp-10px på alla sidor, samt att bildens höjd ändras proportioneligt med bredden */
-    padding: 10px;
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    display: block;
+    height: auto; 
 }
 img[alt="logotyp alexandra"] {
     border: none;
@@ -157,4 +286,22 @@ footer {
 
 footer a {
     color: white;
+}
+
+
+@media (min-width: 700px) {
+    .page-layout {
+        /* så att en tom box inte ska försvinna i layouten */
+        min-height: 0;
+        grid-template-rows: auto, 2fr, auto;
+
+        grid-template-areas:
+        "header header header"
+        "main main aside"
+        "footer footer footer";
+    }
+
+    .card-grid {
+        flex-direction: row;
+    }
 }
