@@ -314,6 +314,7 @@ footer a {
         justify-content: center;
         align-items: center;
         gap: 100px;
+        padding: 0;
     }
 
     .main {
@@ -345,7 +346,9 @@ footer a {
     }
 
     img[alt="logotyp alexandra"] {
-    width: 70px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
 
     #hero {
@@ -355,12 +358,4 @@ footer a {
 
     }
 
-    #section2 {
-        
-    }
-
-     /* Jag vill att headern ska synas även när man scrollar, men bara på stor skärm */
-     /* header {
-        position: fixed;
-    } */
 }
