@@ -173,7 +173,28 @@ h1 {
     color: black;
     font-size: 3rem;
     line-height: 1;
+    padding: 0 1rem;
 }
+
+/* "boxen" med hero-bild och rubrik */
+#hero-aventyr-box{
+    /* gör att texten kan lägga sig i rutan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* h1-rubriken i äventyr som ska ligga över hero-bilden */
+h1.aventyr {
+    color:black;
+    text-shadow: 0 0 10px white;
+    /* Gör att texten "flyter" på bilden */
+    position: absolute;
+    /* Gör att h1 helt säkert hamnar överst */
+    z-index: 10;
+}
+
+
 h2 {
     font-family: Alatsi, sans-serif;
     color: black;
@@ -320,8 +341,6 @@ footer a {
     .main {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        /* ser till att inte main döljs av headern (som är låst) */
-        /* padding-top: 67px; */
     }
 
     .footer {
@@ -352,10 +371,11 @@ footer a {
 }
 
     #hero {
-        max-height: 500px;
+        max-height: 400px;
         width: 100%;
         object-fit: cover;
-
+        grid-row: 1/2;
+        grid-column: 1/3;
     }
 
 }
