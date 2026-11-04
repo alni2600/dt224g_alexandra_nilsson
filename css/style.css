@@ -3,48 +3,201 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #dfc4df;
-    color: #000000;
-    font-family: 'Doppio One', Arial, sans-serif;
-    font-size: 1.2rem;
-    line-height: 2;
-    margin: 20px;
+:root{
+    --bg-primary: #dfc4df; /* ljuslila */
+    --accent-color: #a574a5; /* mörklila */
 }
 
-header {
-    background-color: #380369;
+/* ==================
+  STORA GRUPPERINGAR
+===================== */
+
+/* Generellt för hela sidan */
+body {
+    background-color: var(--bg-primary);
+    color: #000000;
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0; 
+}
+
+/* strukturerar huvudinnehållet (Head/Main/Footer) */
+.page-layout {
+    display: flex;
+    flex-direction: column;
+    /* gör att innehållet täcker hela höjden */
+    min-height: 100vh;
+}
+
+/* headern i liten skärm */
+.header {
+    display: flex;
+    font-weight: 600;
+    flex-direction: column;
+    background-color: var(--accent-color);
     color: rgb(12, 0, 0);
     padding: 1rem;
     text-align: center;
+    align-items: center;
+}
+
+
+/* strukturerar huvudinnehållet. Skapar flex för liten skärm */
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    /* Låter main-elementet vara det som tar upp överblivet utrymme */
+    flex: 1;
+}
+
+#contact-main {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.4rem;
+}
+
+.footer {
+    background-color: var(--accent-color);
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem;
+}
+
+.box {
+    /* TA BORT NÄR INNEHÅLLET ÄR LITE MER PÅ PLATS */
+    border: 2px solid black;
+    min-height: 80px;
+}
+
+
+/* ==================
+  CLASSES / IDs
+===================== */
+
+.section {
+  text-align: center;
+  text-wrap: wrap;
+  border-bottom: 2px solid #9CA695;
+  padding: 1rem;
+}
+
+/* tar bort linjen under hero-bilden och gör att headern under den hamnar närmare */
+#hero {
+    border: none;
+    padding-bottom: 0;
+}
+
+.card-grid {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
 }
 
 header a {
-    color: white;
+    color: black;
     text-decoration: none;
+    font-family: Alatsi, sans-serif;
 }
 
-header ul {
+
+
+/* ===== CARDS ======= */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent-color);
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 1rem;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 1.2rem;
+    color:black;
+    font-family: Alatsi, sans-serif;
+}
+
+.card-body p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: black;
+}
+
+.card-body .button {
+    margin-top: auto;
+    align-self: flex-start;
+    padding: 0.4rem 0.8rem;
+    background-color: blueviolet;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+/* Nav-listan i headern */
+.nav-ul {
     /* tar bort prickarna på listan */
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     /* gör att valen hamnar bredvid varandra istället */
     display: flex;
-    /* placerar länkarna så att de är jämnt fördelade över hela vp-bredden (kan också använda gap: 10px; för att skapa mellanrum mellanblocken*/
-    justify-content: space-evenly;
+    flex-direction: column;
+    padding-left: 0;
 }
 
 h1 {
-    font-family: impact, sans-serif;
-    color: #380369;
-    font-size: 4rem;
+    font-family: Alatsi, sans-serif;
+    color: black;
+    font-size: 3rem;
     line-height: 1;
-    -webkit-text-stroke: 0.1px #0b0014;
+    padding: 0 1rem;
 }
+
+/* "boxen" med hero-bild och rubrik */
+#hero-aventyr-box{
+    /* gör att texten kan lägga sig i rutan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* h1-rubriken i äventyr som ska ligga över hero-bilden */
+h1.aventyr {
+    color:black;
+    text-shadow: 0 0 10px white;
+    /* Gör att texten "flyter" på bilden */
+    position: absolute;
+    /* Gör att h1 helt säkert hamnar överst */
+    z-index: 10;
+}
+
+
 h2 {
-    font-family: 'Doppio One', Arial, sans-serif;
-    color: #380369;
+    font-family: Alatsi, sans-serif;
+    color: black;
     font-size: 2.5rem;
     line-height: 1.2;
 }
@@ -57,26 +210,34 @@ p {
 }
 
 img {
-    position: relative;
-    border: 15px #380369 dotted;
-    /* följande tre rader gör att bilden täcker 100% av vp-10px på alla sidor, samt att bildens höjd ändras proportioneligt med bredden */
-    padding: 10px;
-    width: 100%;
-    height: auto;
+    border: none;
+    /* gör att bilderna aldrig blir större än parent-elementet och "block" att det inte blir "extra" space på sidorna/under */
+    display: block;
+    max-inline-size: 100%;
 }
+
 img[alt="logotyp alexandra"] {
     border: none;
     width: 50%;
-    max-width: 400px;
+    max-width: 150px;
 }
 
 form {
-    background-color: #f15795;
-    padding: 20px;
+    display: grid;
+    background-color: var(--accent-color);
+    padding: 1rem;
+    gap: 0.6rem;
     border-radius: 10px;
-    border: 5px solid #380369;
+    border: 3px solid black;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 0;
+    text-align: start;
+}
+
+input{
+    /* Gör att inte inmatningsfälten hamnar utanför form-elementet */
+    width: 100%;
+    border-radius: 5px;
 }
 
 /* blir en ljus rosa färg när man är i fältet, standardraden är kvar (outline: none; om den ska bort*/
@@ -85,18 +246,24 @@ input:focus, textarea:focus, select:focus {
 }
 
 button {
-    background-color: #380369;    
-    color: white;              
-    padding: 10px 24px;         
-    border: none;                 
-    border-radius: 4px;           
+    background-color: var(--accent-color);
+    color: black;              
+    padding: 0.5rem 1.2rem;         
+    border: 2px solid black;                 
+    border-radius: 3px;           
     font-size: 1rem; 
     /* Handmarkör vid hover */             
     cursor: pointer;   
 }
 
+form button{
+   background-color: var(--bg-primary);
+   /* gör att knappen inte stretchar över hela boxen */
+   justify-self: center;
+}
+
 button:hover {
-    background-color:#380369;
+    background-color:var(--accent-color);
 }
 
 button:active {
@@ -113,15 +280,14 @@ table {
 }
 
 .table-container {
-    border: 10px solid #380369;
+    border: 10px solid var(--accent-color);
     border-radius: 6px;
     overflow-x: auto;     /* Horisontell scroll vid behov */
-    -webkit-overflow-scrolling: touch; /* Smidig scroll på mobil */
 }
 
 th, 
 td {
-    border: 1px solid #380369;
+    border: 1px solid var(--accent-color);
     padding: 0.7em;
     text-align: left;
 }
@@ -148,13 +314,68 @@ textarea {
 }
 
 footer {
-    background-color: #380369;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    line-height: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--accent-color);
+    color: black;
+    font-family: Alatsi, sans-serif;
+    align-items: center;
 }
 
 footer a {
-    color: white;
+    color: black;
+    text-decoration: none;
+}
+
+
+@media (min-width: 768px) {
+    /* lägger allt innehåll på en rad i headern */
+    .header {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+        padding: 0;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .footer {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+      .nav-ul  {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        padding-right: 40px;
+    }  
+
+    .card-grid {
+        flex-direction: row;
+    }
+
+    /* gör att de sections som ska täcka hela bredden faktiskt gör det*/
+    .grid-col-span-2 {
+        grid-column: span 2;
+    }
+
+    img[alt="logotyp alexandra"] {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+    #hero {
+        max-height: 400px;
+        width: 100%;
+        object-fit: cover;
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+
 }
