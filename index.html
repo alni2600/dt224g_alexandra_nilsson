@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Alexandras hemsida</title>
         <link href="css/style.css" rel="stylesheet">
+        <script src="JS/menu.js" defer></script>
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,11 +20,14 @@
         <!-- HEADER -->
 
             <header class="box header">
-                <!-- <a class="logo" href="index.html"> -->
-                    <img src="images/logotypANsvart.svg" alt="logotyp alexandra">
-                <!-- </a> -->
+                <a href="index.html" class="logo">
+                    <img src="images/logotypANsvart.svg" alt="logotyp alexandra" id="logo">
+                </a>
                 
-                <nav>
+                <button class="menu-toggle" type="button" aria-label="Öppna meny" aria-expanded="false" aria-controls="primary-navigation">
+                    <img src="images/burgermenu-black.svg" alt="">
+                </button>
+                <nav class="nav-menu" id="primary-navigation">
                     <ul class="nav-ul">
                         <li><a href="index.html">Start</a></li>
                         <li><a href="hobby.html">Längdskidor</a></li>
@@ -37,8 +41,8 @@
             
         <!-- MAIN -->
         <main class="box main">
-                <div class="grid-col-span-2" id="hero">
-                    <img src="images/hero.jpg" alt="vinter med mycket snö och fina berg i bakgrunden"id="hero"> 
+                <div class="grid-col-span-2" id="hero-div">
+                    <img src="images/hero.jpg" alt="vinter med mycket snö och fina berg i bakgrunden" id="hero"> 
                 </div>
 
                 <section class="section grid-col-span-2" id="section2">
@@ -46,7 +50,6 @@
                     <h2>Vem är jag?</h2>
                     <p>Jag heter Alexandra och är en 34-årig tjej som har många intressen. Jag gillar bland annat att träna, åka skidor, vara på fjället, odla grönsaker, läsa böcker, laga mat och baka.</p>
                     <p>Jag bor i Åre men kommer ursprungligen från en by söder om Kalmar.</p>
-                     <a href="#" class="button">Läs mer</a>
                 </section>
                 
                 <section class="section card-grid grid-col-span-2">
@@ -73,7 +76,7 @@
 
                 <figure>
                     <img src="images/skidbild.jpg" alt="skidbild">
-                    <figcaption class=”ImageCaption”>Foto på Alexandra från loppet Bad Castein Criterium</figcaption>
+                    <figcaption class="ImageCaption">Foto på Alexandra från loppet Bad Castein Criterium</figcaption>
                 </figure>
                 
                 <section class="section">
@@ -86,6 +89,12 @@
             <footer class="box footer">
                 <p>&copy; 2026 Alexandra Nilsson </p>
                 <a href="kontakt.html">Kontakta mig</a>
+                <a href="https://www.instagram.com/alexandranilsson77_96/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/insta.png" class="SOME">
+                </a>
+                <a href="https://www.youtube.com/@alexandranilsson77_96-uo5pp" target="_blank" rel="noopener noreferrer">
+                    <img src="images/youtube.png" class="SOME">
+                </a>
             </footer>
 
     </body>

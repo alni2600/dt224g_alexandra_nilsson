@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Längdskidor</title>
         <link href="css/style.css" rel="stylesheet">
+        <script src="JS/menu.js" defer></script>
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,11 +20,14 @@
         <!-- HEADER -->
 
             <header class="box header">
-                <!-- <a class="logo" href="index.html"> -->
-                    <img src="images/logotypANsvart.svg" alt="logotyp alexandra">
-                <!-- </a> -->
+                  <a href="index.html" class="logo">
+                    <img src="images/logotypANsvart.svg" alt="logotyp alexandra" id="logo">
+                </a>
                 
-                <nav>
+                <button class="menu-toggle" type="button" aria-label="Öppna meny" aria-expanded="false" aria-controls="primary-navigation">
+                    <img src="images/burgermenu-black.svg" alt="">
+                </button>
+                <nav class="nav-menu" id="primary-navigation">
                     <ul class="nav-ul">
                         <li><a href="index.html">Start</a></li>
                         <li><a href="hobby.html">Längdskidor</a></li>
@@ -113,6 +117,12 @@
             <footer class="box footer">
                 <p>&copy; 2026 Alexandra Nilsson </p>
                 <a href="kontakt.html">Kontakta mig</a>
+                <a href="https://www.instagram.com/alexandranilsson77_96/" target="_blank" rel="noopener noreferrer">
+                    <img src="images/insta.png" class="SOME">
+                </a>
+                <a href="https://www.youtube.com/@alexandranilsson77_96-uo5pp" target="_blank" rel="noopener noreferrer">
+                    <img src="images/youtube.png" class="SOME">
+                </a>
             </footer>
 
     </body>
